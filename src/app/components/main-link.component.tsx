@@ -1,5 +1,3 @@
-"use client"
-
 import React from 'react';
 import { Text, Center, Button, Stack } from '@mantine/core';
 import { IconNews, IconPlus } from '@tabler/icons-react';
