@@ -9,14 +9,30 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mantine/code-highlight": "^7.0.0-alpha.19",
+    "@mantine/core": "^7.0.0-alpha.19",
+    "@mantine/hooks": "^7.0.0-alpha.19",
+    "@mantine/notifications": "^7.0.0-alpha.19",
+    "@mantine/spotlight": "^7.0.0-alpha.19",
+    "@tabler/icons-react": "^2.30.0",
+    "@tiptap/extension-link": "^2.0.4",
+    "@tiptap/react": "^2.0.4",
+    "@tiptap/starter-kit": "^2.0.4",
     "@types/node": "20.4.5",
     "@types/react": "18.2.17",
     "@types/react-dom": "18.2.7",
+    "dayjs": "^1.11.9",
+    "embla-carousel-react": "^8.0.0-rc11",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
     "next": "13.4.12",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "postcss": "^8.4.27",
+    "postcss-preset-mantine": "^1.7.0",
+    "postcss-simple-vars": "^7.0.1"
   }
 }
