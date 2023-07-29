@@ -1,9 +1,8 @@
 "use client"
 
 import React from 'react';
-import { Text, Center, useMantineTheme, Button, Stack } from '@mantine/core';
-import { IconNews, IconPlus, IconSlideshow } from '@tabler/icons-react';
-import { useRouter } from 'next/navigation';
+import { Text, Center, Button, Stack } from '@mantine/core';
+import { IconNews, IconPlus } from '@tabler/icons-react';
 
 interface MainLinkProps {
     icon: React.ReactNode;
@@ -13,9 +12,6 @@ interface MainLinkProps {
 }
 
 function MainLink({ icon, color, label, href }: MainLinkProps) {
-    const router = useRouter()
-    const theme = useMantineTheme();
-
     return (
         <Button component='a' justify='flex-start' variant={'subtle'} color={color} href={href}>
             <Center>

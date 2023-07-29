@@ -2,15 +2,18 @@
 
 import { useDisclosure } from '@mantine/hooks';
 import { ActionIcon, AppShell, AppShellHeader, AppShellMain, AppShellNavbar, Burger, Center, Grid, GridCol, Group, Menu, MenuDivider, MenuDropdown, MenuItem, MenuLabel, MenuTarget, SimpleGrid, Stack, Text, rem, useMantineTheme } from '@mantine/core';
-import React from 'react';
+import React, { useTransition } from 'react';
 import { MainLinks } from './main-link.component';
 import Image from 'next/image';
 import { IconLogout, IconSettings, IconUser } from '@tabler/icons-react';
+import useRouterClient from '../lib/clientRouter';
 
 export function TheNavbar({ children }: { children: React.ReactNode }) {
     const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
     const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
     const theme = useMantineTheme()
+    const router = useRouterClient()
+    let [isPending, startTransition] = useTransition()
 
     return (
         <AppShell
@@ -61,7 +64,12 @@ export function TheNavbar({ children }: { children: React.ReactNode }) {
                             <MenuLabel>Hallo</MenuLabel>
                             <MenuItem
                                 component='a'
-                                href='/profile'
+                                onClick={() => {
+                                    router.push('/profile')
+                                    startTransition(() => {
+                                        router.refresh()
+                                    })
+                                }}
                                 leftSection={<IconUser style={{ width: rem(14), height: rem(14) }} />}>
                                 Profile
                             </MenuItem>
