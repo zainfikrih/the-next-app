@@ -23,7 +23,7 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body className={inter.className}>
-        <MantineProvider>
+        <MantineProvider defaultColorScheme="auto">
           <TheNavbar>
             {children}
           </TheNavbar>
