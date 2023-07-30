@@ -100,7 +100,7 @@ export function TheNavbar({ children }: { children: React.ReactNode }) {
                 </Group>
             </AppShellHeader>
             <AppShellNavbar>
-                <MainLinks />
+                <MainLinks toggleMobile={toggleMobile} />
             </AppShellNavbar>
             <AppShellMain>
                 {children}
