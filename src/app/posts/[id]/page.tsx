@@ -2,8 +2,6 @@ import { Center, Stack, Text } from '@mantine/core'
 import NextPostButton from '../../components/NextPostButton'
 import { getPost } from '@/app/services/postsService'
 
-export const revalidate = 0
-
 export default async function Posts({ params, searchParams }: {
     params: {
         id: string
