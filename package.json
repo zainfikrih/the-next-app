@@ -34,6 +34,7 @@
   "devDependencies": {
     "postcss": "^8.4.27",
     "postcss-preset-mantine": "^1.7.0",
-    "postcss-simple-vars": "^7.0.1"
+    "postcss-simple-vars": "^7.0.1",
+    "typescript-plugin-css-modules": "^5.0.1"
   }
 }

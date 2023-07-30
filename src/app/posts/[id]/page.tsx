@@ -1,10 +1,8 @@
 import { Center, Stack, Text } from '@mantine/core'
-import axiosApp from '@/app/lib/axiosConfig'
+import NextPostButton from '../../components/NextPostButton'
+import { getPost } from '@/app/services/postsService'
 
-async function getPost(id: string) {
-    const res = await axiosApp.get(`/posts/${id}`)
-    return res.data
-}
+export const revalidate = 0
 
 export default async function Posts({ params, searchParams }: {
     params: {
@@ -12,14 +10,14 @@ export default async function Posts({ params, searchParams }: {
     },
     searchParams: any
 }) {
-    const data = await getPost(params.id)
+    const initValue = await getPost(params.id)
     return (
         <Center h={'100vh'}>
             <Stack>
                 <Center>
                     <Text>Post Page</Text>
                 </Center>
-                <Text>{JSON.stringify(data)}</Text>
+                <NextPostButton props={{ currentId: params.id, initialValue: initValue }} />
             </Stack>
         </Center>
     )

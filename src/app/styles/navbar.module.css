@@ -22,3 +22,11 @@
         display: block;
     }
 }
+
+.backgroundScheme {
+    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+}
+
+.backgroundIconScheme {
+    background-color: light-dark(var(--mantine-color-cyan-0), white);
+}

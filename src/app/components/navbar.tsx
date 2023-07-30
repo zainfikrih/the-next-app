@@ -8,19 +8,19 @@ import Image from 'next/image';
 import { IconLogout, IconMoon, IconSettings, IconSun, IconUser } from '@tabler/icons-react';
 import useRouterClient from '../lib/clientRouter';
 import cx from 'clsx'
-import classes from '@/app/styles/navbar.module.css'
+import classes from '../styles/navbar.module.css'
 
 export function TheNavbar({ children }: { children: React.ReactNode }) {
     const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
     const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
     const theme = useMantineTheme()
-    const { colorScheme, setColorScheme } = useMantineColorScheme();
+    const { setColorScheme } = useMantineColorScheme();
     const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
     const router = useRouterClient()
-    let [isPending, startTransition] = useTransition()
 
     return (
         <AppShell
+            className={classes.backgroundScheme}
             padding={'md'}
             header={{ height: 60 }}
             navbar={{
@@ -38,9 +38,9 @@ export function TheNavbar({ children }: { children: React.ReactNode }) {
                             color={theme.colors.cyan[7]} />
                         <Center visibleFrom='sm' ml={'lg'}>
                             <Image
+                                className={classes.backgroundIconScheme}
                                 style={{
                                     padding: '6px',
-                                    backgroundColor: computedColorScheme == 'light' ? `${theme.colors.blue[1]}` : 'white',
                                     borderRadius: '30%',
                                 }}
                                 src={'/next.svg'}
@@ -82,9 +82,6 @@ export function TheNavbar({ children }: { children: React.ReactNode }) {
                                     component='a'
                                     onClick={() => {
                                         router.push('/profile')
-                                        startTransition(() => {
-                                            router.refresh()
-                                        })
                                     }}
                                     leftSection={<IconUser style={{ width: rem(14), height: rem(14) }} />}>
                                     Profile
