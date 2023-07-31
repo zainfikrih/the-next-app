@@ -3,10 +3,10 @@
 import { useDisclosure } from '@mantine/hooks';
 import { ActionIcon, AppShell, AppShellHeader, AppShellMain, AppShellNavbar, Burger, Center, Grid, GridCol, Group, Menu, MenuDivider, MenuDropdown, MenuItem, MenuLabel, MenuTarget, SimpleGrid, Stack, Text, rem, useComputedColorScheme, useMantineColorScheme, useMantineTheme } from '@mantine/core';
 import React, { useTransition } from 'react';
-import { MainLinks } from './main-link.component';
+import { MainLinks } from './MainLink.component';
 import Image from 'next/image';
 import { IconLogout, IconMoon, IconSettings, IconSun, IconUser } from '@tabler/icons-react';
-import useRouterClient from '../lib/clientRouter';
+import useRouterClient from '../../lib/clientRouter';
 import cx from 'clsx'
 import classes from '../styles/navbar.module.css'
 
