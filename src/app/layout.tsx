@@ -11,6 +11,8 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'The Next App',
   description: 'NextJS 13, Mantine UI, Zustand, NextAuth',
+  manifest: '/manifest.webmanifest.json',
+  viewport: "width=device-width, initial-scale=1.0",
 }
 
 export default function RootLayout({
