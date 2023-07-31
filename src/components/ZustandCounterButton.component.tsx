@@ -1,6 +1,6 @@
 "use client"
 import { Button } from "@mantine/core";
-import { useAppStore } from "../stores/app.store";
+import { useAppStore } from "../app/stores/app.store";
 import { useTransition } from "react";
 import { useRouter } from "next/navigation";
 

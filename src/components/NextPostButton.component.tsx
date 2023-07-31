@@ -1,7 +1,7 @@
 "use client"
 
 import { Button, Stack, Text } from "@mantine/core"
-import { getPost } from "../services/postsService"
+import { getPost } from "../app/services/postsService"
 import { useState, useTransition } from "react"
 import { useRouter } from "next/navigation"
 

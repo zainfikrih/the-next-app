@@ -3,8 +3,8 @@ import '@mantine/core/styles.css'
 import { MantineProvider, ColorSchemeScript } from '@mantine/core'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { TheNavbar } from './components/NavbarComponent'
-import { Hydrated } from './lib/hydrateProvider'
+import { TheNavbar } from '../components/Navbar/Navbar.component'
+import { Hydrated } from '../lib/hydrateProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 

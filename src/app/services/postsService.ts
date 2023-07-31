@@ -1,6 +1,6 @@
 "use server"
 
-import axiosApp from "@/app/lib/axiosConfig"
+import axiosApp from "@/lib/axiosConfig"
 
 export async function getPost(id: string) {
     const res = await axiosApp.get(`/posts/${id}`)

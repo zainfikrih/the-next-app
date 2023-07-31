@@ -1,6 +1,6 @@
 "use client"
 import { Center, Text } from "@mantine/core"
-import { useAppStore } from "../stores/app.store"
+import { useAppStore } from "../app/stores/app.store"
 
 export default function ZustandCounterText() {
     const appStore = useAppStore()
