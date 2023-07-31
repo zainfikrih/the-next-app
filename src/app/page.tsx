@@ -1,7 +1,7 @@
-import Image from 'next/image'
-import styles from './page.module.css'
-import { Button, Center, Grid, GridCol, Stack, Text } from '@mantine/core'
+import { Button, Center, Stack, Text } from '@mantine/core'
 import Link from 'next/link'
+import ZustandCounterButton from './components/ZustandCounterButton'
+import ZustandCounterText from './components/ZustandCounterText'
 
 export default function Home() {
   return (
@@ -15,6 +15,8 @@ export default function Home() {
             Check Post
           </Button>
         </Center>
+        <ZustandCounterText />
+        <ZustandCounterButton />
       </Stack>
     </Center>
   )

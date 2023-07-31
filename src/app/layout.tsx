@@ -4,6 +4,7 @@ import { MantineProvider, ColorSchemeScript } from '@mantine/core'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { TheNavbar } from './components/Navbar'
+import { Hydrated } from './lib/hydrateProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,9 +25,11 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <MantineProvider defaultColorScheme="auto">
-          <TheNavbar>
-            {children}
-          </TheNavbar>
+          <Hydrated>
+            <TheNavbar>
+              {children}
+            </TheNavbar>
+          </Hydrated>
         </MantineProvider>
       </body>
     </html>
