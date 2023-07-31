@@ -1,7 +1,7 @@
 import { Button, Center, Stack, Text } from '@mantine/core'
 import Link from 'next/link'
-import ZustandCounterButton from './components/ZustandCounterButton'
-import ZustandCounterText from './components/ZustandCounterText'
+import ZustandCounterButton from '../components/ZustandCounterButton.component'
+import ZustandCounterText from '../components/ZustandCounterText.component'
 
 export default function Home() {
   return (

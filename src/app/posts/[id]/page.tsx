@@ -1,5 +1,5 @@
 import { Center, Stack, Text } from '@mantine/core'
-import NextPostButton from '../../components/NextPostButton'
+import NextPostButton from '../../../components/NextPostButton.component'
 import { getPost } from '@/app/services/postsService'
 
 export default async function Posts({ params, searchParams }: {
