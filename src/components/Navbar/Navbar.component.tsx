@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { IconLogout, IconMoon, IconSettings, IconSun, IconUser } from '@tabler/icons-react';
 import useRouterClient from '../../lib/clientRouter';
 import cx from 'clsx'
-import classes from '../styles/navbar.module.css'
+import classes from '../../styles/navbar.module.css'
 
 export function TheNavbar({ children }: { children: React.ReactNode }) {
     const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
