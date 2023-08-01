@@ -7,6 +7,7 @@ import { TheNavbar } from '../components/Navbar/Navbar.component'
 import { Hydrated } from '../lib/hydrateProvider'
 
 const inter = Inter({ subsets: ['latin'] })
+export const dynamic = 'force-static' // temp solution
 
 export const metadata: Metadata = {
   title: 'The Next App',
