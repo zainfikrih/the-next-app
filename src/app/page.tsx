@@ -2,6 +2,7 @@ import { Button, Center, Stack, Text } from '@mantine/core'
 import Link from 'next/link'
 import ZustandCounterButton from '../components/ZustandCounterButton.component'
 import ZustandCounterText from '../components/ZustandCounterText.component'
+import LoginButton from '@/components/LoginButton.component'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         </Center>
         <ZustandCounterText />
         <ZustandCounterButton />
+        <LoginButton />
       </Stack>
     </Center>
   )
