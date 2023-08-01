@@ -1,17 +1,18 @@
 "use server"
 
 import axiosApp from "@/lib/axiosConfig"
-import { setAccessToken } from "@/lib/cookiesManager"
+import { setAccessToken, setUser } from "@/lib/cookiesManager"
+import { parseJwt } from "@/lib/jwtParse"
 
-export async function login() {
+export async function login(username: string, password: string) {
     const res = await axiosApp.post(`/auth/login`, {
-        username: "",
-        password: ""
+        username: username,
+        password: password
     })
-    if (res) {
-        console.log(res.data)
+    if (res.data.access_token) {
         setAccessToken(res.data.access_token)
-        return { ...res.data }
+        setUser(parseJwt(res.data.access_token))
+        return parseJwt(res.data.access_token)
     }
     return {}
 }

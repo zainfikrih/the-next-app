@@ -1,8 +1,6 @@
-import { accessToken } from '@/lib/cookiesManager'
 import { Center, Stack, Text } from '@mantine/core'
 
 export default async function Profile() {
-    const getAccessToken = accessToken()
     return (
         <Center h={'100vh'}>
             <Stack>
@@ -10,7 +8,7 @@ export default async function Profile() {
                     <Text>Profile Page</Text>
                 </Center>
                 <Center>
-                    <Text>Token: {getAccessToken}</Text>
+                    <Text>Token:</Text>
                 </Center>
             </Stack>
         </Center>
