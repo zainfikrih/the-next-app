@@ -6,6 +6,10 @@ export const appStore = create<IAppStore>()(
         persist(
             (set) => ({
                 counter: 0,
+                user: {},
+                setUser: (value: any) => {
+                    set(() => ({ user: value }))
+                },
                 increment: () => {
                     set((state) => ({ counter: state.counter + 1 }))
                 },
@@ -22,6 +26,8 @@ export const appStore = create<IAppStore>()(
 )
 interface IAppStore {
     counter: number,
+    user: any,
+    setUser: (value: any) => void,
     increment: () => void
     decrement: () => void
 }
