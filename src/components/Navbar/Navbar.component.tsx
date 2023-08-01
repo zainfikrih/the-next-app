@@ -64,7 +64,9 @@ export function TheNavbar({ children }: { children: React.ReactNode }) {
                             <IconMoon className={cx(classes.dark)} size={20} />
                             <IconSun className={cx(classes.light)} size={20} />
                         </ActionIcon>
-                        <Menu shadow="md" width={200}>
+                        <Menu shadow="md" width={200}
+                            trigger='hover'
+                            openDelay={100} closeDelay={400}>
                             <MenuTarget>
                                 <ActionIcon
                                     variant="subtle"
