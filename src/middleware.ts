@@ -7,9 +7,9 @@ export default async function middleware(req: NextRequest) {
     const { pathname } = req.nextUrl;
 
     console.log(`Hai Middleware: ${jwt}`)
-    if (pathname.startsWith("/profile")) {
+    if (pathname.startsWith("/home")) {
         if (jwt === undefined) {
-            req.nextUrl.pathname = "/login";
+            req.nextUrl.pathname = "/auth";
             return NextResponse.redirect(req.nextUrl);
         }
         return NextResponse.next();
