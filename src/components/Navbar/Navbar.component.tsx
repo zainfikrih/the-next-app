@@ -2,13 +2,15 @@
 
 import { useDisclosure } from '@mantine/hooks';
 import { ActionIcon, AppShell, AppShellHeader, AppShellMain, AppShellNavbar, Burger, Center, Grid, GridCol, Group, Menu, MenuDivider, MenuDropdown, MenuItem, MenuLabel, MenuTarget, SimpleGrid, Stack, Text, rem, useComputedColorScheme, useMantineColorScheme, useMantineTheme } from '@mantine/core';
-import React, { useTransition } from 'react';
+import React, { startTransition, useTransition } from 'react';
 import { MainLinks } from './MainLink.component';
 import Image from 'next/image';
 import { IconLogout, IconMoon, IconSettings, IconSun, IconUser } from '@tabler/icons-react';
 import useRouterClient from '../../lib/clientRouter';
 import cx from 'clsx'
 import classes from '../../styles/navbar.module.css'
+import { logoutCookies } from '@/lib/cookiesManager';
+import { useAppStore } from '@/app/stores/app.store';
 
 export function TheNavbar({ children }: { children: React.ReactNode }) {
     const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
@@ -17,6 +19,7 @@ export function TheNavbar({ children }: { children: React.ReactNode }) {
     const { setColorScheme } = useMantineColorScheme();
     const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
     const router = useRouterClient()
+    const appStore = useAppStore()
 
     return (
         <AppShell
@@ -79,11 +82,11 @@ export function TheNavbar({ children }: { children: React.ReactNode }) {
                             </MenuTarget>
 
                             <MenuDropdown>
-                                <MenuLabel>Hallo</MenuLabel>
+                                <MenuLabel>Hallo {appStore.user.opd}</MenuLabel>
                                 <MenuItem
                                     component='a'
                                     onClick={() => {
-                                        router.push('/profile')
+                                        router.push('/home/profile')
                                     }}
                                     leftSection={<IconUser style={{ width: rem(14), height: rem(14) }} />}>
                                     Profile
@@ -92,6 +95,13 @@ export function TheNavbar({ children }: { children: React.ReactNode }) {
                                 <MenuLabel>Account</MenuLabel>
                                 <MenuItem
                                     color="red"
+                                    onClick={() => {
+                                        logoutCookies()
+                                        startTransition(() => {
+                                            router.refresh()
+                                            router.replace('/')
+                                        })
+                                    }}
                                     leftSection={<IconLogout style={{ width: rem(14), height: rem(14) }} />}>
                                     Logout
                                 </MenuItem>
