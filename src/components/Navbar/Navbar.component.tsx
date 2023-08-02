@@ -2,7 +2,7 @@
 
 import { useDisclosure } from '@mantine/hooks';
 import { ActionIcon, AppShell, AppShellHeader, AppShellMain, AppShellNavbar, Burger, Center, Grid, GridCol, Group, Menu, MenuDivider, MenuDropdown, MenuItem, MenuLabel, MenuTarget, SimpleGrid, Stack, Text, rem, useComputedColorScheme, useMantineColorScheme, useMantineTheme } from '@mantine/core';
-import React, { startTransition, useTransition } from 'react';
+import React, { startTransition, useEffect, useTransition } from 'react';
 import { MainLinks } from './MainLink.component';
 import Image from 'next/image';
 import { IconLogout, IconMoon, IconSettings, IconSun, IconUser } from '@tabler/icons-react';
@@ -16,10 +16,14 @@ export function TheNavbar({ children }: { children: React.ReactNode }) {
     const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
     const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
     const theme = useMantineTheme()
-    const { setColorScheme } = useMantineColorScheme();
+    const { colorScheme, setColorScheme } = useMantineColorScheme();
     const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
     const router = useRouterClient()
     const appStore = useAppStore()
+
+    useEffect(() => {
+        appStore.setColorTheme(computedColorScheme)
+    }, [colorScheme])
 
     return (
         <AppShell
