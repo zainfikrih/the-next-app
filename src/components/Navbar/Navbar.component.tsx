@@ -17,7 +17,7 @@ export function TheNavbar({ children }: { children: React.ReactNode }) {
     const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
     const theme = useMantineTheme()
     const { colorScheme, setColorScheme } = useMantineColorScheme();
-    const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
+    const computedColorScheme = useComputedColorScheme('dark', { getInitialValueInEffect: true });
     const router = useRouterClient()
     const appStore = useAppStore()
 
