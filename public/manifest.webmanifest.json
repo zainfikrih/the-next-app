@@ -1,4 +1,5 @@
 {
+    "$schema": "https://json.schemastore.org/web-manifest",
     "theme_color": "#1098AD",
     "background_color": "#E3FAFC",
     "display": "standalone",

@@ -7,8 +7,12 @@ export const appStore = create<IAppStore>()(
             (set) => ({
                 counter: 0,
                 user: {},
+                colorTheme: 'dark',
                 setUser: (value: any) => {
                     set(() => ({ user: value }))
+                },
+                setColorTheme: (value: string) => {
+                    set(() => ({ colorTheme: value }))
                 },
                 increment: () => {
                     set((state) => ({ counter: state.counter + 1 }))
@@ -27,7 +31,9 @@ export const appStore = create<IAppStore>()(
 interface IAppStore {
     counter: number,
     user: any,
+    colorTheme: string,
     setUser: (value: any) => void,
+    setColorTheme: (value: string) => void,
     increment: () => void
     decrement: () => void
 }
