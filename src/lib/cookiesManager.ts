@@ -10,6 +10,7 @@ export const setAccessToken = async (token: string) => cookies().set({
     expires: parseJwt(token).exp * 1000,
     path: '/',
 })
+export const clearAccessToken = () => cookies().delete('accessToken')
 
 export const getUser = () => cookies().get('user')?.value
 export const setUser = async (value: any) => cookies().set({
@@ -18,3 +19,9 @@ export const setUser = async (value: any) => cookies().set({
     expires: value.exp * 1000,
     path: '/',
 })
+export const clearUser = () => cookies().delete('user')
+
+export const logoutCookies = () => {
+    clearAccessToken()
+    clearUser()
+}

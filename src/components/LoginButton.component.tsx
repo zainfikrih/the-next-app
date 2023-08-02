@@ -19,17 +19,12 @@ export default function LoginButton({ props }: {
             startTransition(async () => {
                 const res = await login(props.username, props.password)
                 appStore.setUser(res)
-                // router.refresh()
+                router.refresh()
+                router.replace('/')
             })
         }}>
             Login
         </Button>
-        {appStore.user &&
-            <Alert variant="light" color="blue" title="Alert title" icon={<IconInfoCircle />}>
-                <Box w={300}>
-                    <Code>{JSON.stringify(appStore.user, null, 2)}</Code>
-                </Box>
-            </Alert>}
     </>
     )
 }

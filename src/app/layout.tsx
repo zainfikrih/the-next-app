@@ -18,8 +18,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  auth,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
+  auth: React.ReactNode
 }) {
   return (
     <html lang="en">
@@ -29,9 +31,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <MantineProvider defaultColorScheme="auto">
           <Hydrated>
-            <TheNavbar>
-              {children}
-            </TheNavbar>
+            {children}
           </Hydrated>
         </MantineProvider>
       </body>

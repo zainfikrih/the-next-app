@@ -23,8 +23,8 @@ function MainLink({ icon, color, label, href, toggleMobile }: MainLinkProps) {
 }
 
 const data = [
-    { icon: <IconPlus size={16} />, color: 'green', label: 'Home', href: '/' },
-    { icon: <IconNews size={16} />, color: 'yellow', label: 'Profile', href: '/profile' }
+    { icon: <IconPlus size={16} />, color: 'green', label: 'Home', href: '/home' },
+    { icon: <IconNews size={16} />, color: 'yellow', label: 'Profile', href: '/home/profile' }
 ];
 
 export function MainLinks({ toggleMobile }: { toggleMobile: () => void }) {
