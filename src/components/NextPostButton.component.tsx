@@ -16,10 +16,10 @@ export default function NextPostButton({ props }: {
     const [nextId, setNextId] = useState(Number(props.currentId) + 1)
     const router = useRouter()
 
-    const getNextPost = (id: string) => {
-        startTransition(async () => {
-            setPost(await getPost(id))
-            setNextId(prev => (Number(prev) + 1))
+    const getNextPost = async (id: string) => {
+        setPost(await getPost(id))
+        setNextId(prev => (Number(prev) + 1))
+        startTransition(() => {
             router.refresh()
         })
     }

@@ -15,11 +15,11 @@ export default function LoginButton({ props }: {
     const appStore = useAppStore()
     const router = useRouter()
     return (<>
-        <Button loading={isPending} onClick={() => {
+        <Button loading={isPending} onClick={async () => {
+            const res = await login(props.username, props.password)
+            appStore.setUser(res)
             startTransition(async () => {
-                const res = await login(props.username, props.password)
-                appStore.setUser(res)
-                // router.refresh()
+                router.refresh()
             })
         }}>
             Login
