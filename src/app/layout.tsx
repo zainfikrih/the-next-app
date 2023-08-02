@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: 'The Next App',
   description: 'NextJS 13, Mantine UI, Zustand, NextAuth',
   manifest: '/manifest.webmanifest.json',
-  viewport: "width=device-width, initial-scale=1.0",
+  viewport: "minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no, maximum-scale=1",
 }
 
 export default function RootLayout({
