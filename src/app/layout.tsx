@@ -15,13 +15,23 @@ const desc = "NextJS 13, Mantine UI, Zustand, NextAuth"
 export const metadata: Metadata = {
   title: name,
   description: desc,
+  icons: {
+    icon: '/icon/icon-192.png'
+  },
   manifest: '/manifest.webmanifest.json',
   viewport: "minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no, maximum-scale=1",
   authors: [{ name: "Affogato", url: "https://github.com/zainfikrih/" }],
   keywords:
     "react, pwa, progressive-web-app, nextjs, next.js, app-router, server-side-rendering",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: name,
+    // startUpImage: [],
+  },
   openGraph: {
     type: "website",
+    siteName: name,
     title: {
       default: name,
       template: `%s - ${name}`,
@@ -29,7 +39,7 @@ export const metadata: Metadata = {
     description: desc,
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: {
       default: name,
       template: `%s - ${name}`,

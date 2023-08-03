@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ducanh2912/next-pwa": "^9.4.0",
     "@mantine/code-highlight": "^7.0.0-alpha.19",
     "@mantine/core": "^7.0.0-alpha.19",
     "@mantine/hooks": "^7.0.0-alpha.19",
@@ -36,6 +37,7 @@
     "postcss": "^8.4.27",
     "postcss-preset-mantine": "^1.7.0",
     "postcss-simple-vars": "^7.0.1",
-    "typescript-plugin-css-modules": "^5.0.1"
+    "typescript-plugin-css-modules": "^5.0.1",
+    "webpack": "^5.88.2"
   }
 }
