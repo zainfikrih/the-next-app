@@ -1,9 +1,9 @@
 "use server"
 
-import axios from "axios"
+import axiosApp from "@/lib/axiosConfig"
 
 export async function getPost(id: string) {
-    const res = await axios.get(`https://dummyjson.com/posts/${id}`)
+    const res = await axiosApp.get(`https://dummyjson.com/posts/${id}`)
     console.log(res.data)
     return { ...res.data, date: new Date().toLocaleString() }
 }

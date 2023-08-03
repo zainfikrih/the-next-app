@@ -3,16 +3,16 @@
 import { useDisclosure } from '@mantine/hooks';
 import { ActionIcon, AppShell, AppShellHeader, AppShellMain, AppShellNavbar, Burger, Center, Grid, GridCol, Group, Menu, MenuDivider, MenuDropdown, MenuItem, MenuLabel, MenuTarget, SimpleGrid, Stack, Text, rem, useComputedColorScheme, useMantineColorScheme, useMantineTheme } from '@mantine/core';
 import React, { startTransition, useEffect, useTransition } from 'react';
-import { MainLinks } from './MainLink.component';
-import Image from 'next/image';
-import { IconLogout, IconMoon, IconSettings, IconSun, IconUser } from '@tabler/icons-react';
-import useRouterClient from '../../lib/clientRouter';
+import { MainLinks } from './MainLink.component'
+import Image from 'next/image'
+import { IconLogout, IconMoon, IconSettings, IconSun, IconUser } from '@tabler/icons-react'
+import useRouterClient from '../../lib/clientRouter'
 import cx from 'clsx'
 import classes from '../../styles/navbar.module.css'
-import { logoutCookies } from '@/lib/cookiesManager';
-import { useAppStore } from '@/app/stores/app.store';
+import { logoutCookies } from '@/lib/cookiesManager'
+import { useAppStore } from '@/app/stores/app.store'
 
-export function TheNavbar({ children }: { children: React.ReactNode }) {
+export function TheNavbar({ children, userProfile }: { children: React.ReactNode, userProfile: any }) {
     const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
     const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
     const theme = useMantineTheme()
@@ -24,6 +24,10 @@ export function TheNavbar({ children }: { children: React.ReactNode }) {
     useEffect(() => {
         appStore.setColorTheme(computedColorScheme)
     }, [colorScheme])
+
+    useEffect(() => {
+        appStore.setUser(userProfile)
+    }, [userProfile])
 
     return (
         <AppShell

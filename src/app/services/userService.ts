@@ -11,8 +11,16 @@ export async function login(username: string, password: string) {
     })
     if (res.data.access_token) {
         setAccessToken(res.data.access_token)
-        setUser(parseJwt(res.data.access_token))
+        // setUser(parseJwt(res.data.access_token))
         return parseJwt(res.data.access_token)
+    }
+    return {}
+}
+
+export async function profile() {
+    const res = await axiosApp.get(`/auth/profile`)
+    if (res.data) {
+        return JSON.parse(JSON.stringify(res.data))
     }
     return {}
 }
