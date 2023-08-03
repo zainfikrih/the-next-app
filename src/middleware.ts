@@ -6,7 +6,6 @@ export default async function middleware(req: NextRequest) {
     const url = req.url;
     const { pathname } = req.nextUrl;
 
-    console.log(`Hai Middleware: ${jwt}`)
     if (pathname.startsWith("/home")) {
         if (jwt === undefined) {
             req.nextUrl.pathname = "/auth";
