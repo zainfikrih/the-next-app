@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 // export const dynamic = 'force-static' // temp solution
 
 const name = "The Next App";
-const desc = "NextJS 13, Mantine UI, Zustand, NextAuth";
+const desc = "NextJS 14, Mantine UI, Zustand, NextAuth";
 
 export const viewport = {
   colorScheme: "dark",
