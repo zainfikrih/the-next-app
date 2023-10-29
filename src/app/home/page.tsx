@@ -1,17 +1,21 @@
-import { Button, Center, Stack, Text } from '@mantine/core'
-import Link from 'next/link'
-import ZustandCounterButton from '../../components/ZustandCounterButton.component'
-import ZustandCounterText from '../../components/ZustandCounterText.component'
+import { Button, Center, Stack, Text } from "@mantine/core";
+import Link from "next/link";
+import ZustandCounterButton from "../../components/ZustandCounterButton.component";
+import ZustandCounterText from "../../components/ZustandCounterText.component";
 
 export default function Home() {
   return (
-    <Center h={'100vh'}>
+    <Center h={"100vh"}>
       <Stack>
         <Center>
-          <Text>NextJS 13 with Mantine UI</Text>
+          <Text>NextJS 14 with Mantine UI</Text>
         </Center>
         <Center>
-          <Button variant={'outline'} component={Link} href='/home/posts/2?search=hai'>
+          <Button
+            variant={"outline"}
+            component={Link}
+            href="/home/posts/2?search=hai"
+          >
             Check Post
           </Button>
         </Center>
@@ -19,5 +23,5 @@ export default function Home() {
         <ZustandCounterButton />
       </Stack>
     </Center>
-  )
+  );
 }
