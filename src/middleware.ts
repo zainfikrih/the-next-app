@@ -12,13 +12,6 @@ export default async function middleware(req: NextRequest) {
             return NextResponse.redirect(req.nextUrl);
         }
         return NextResponse.next();
-
-        // try {
-        //   return NextResponse.next();
-        // } catch (error) {
-        //   req.nextUrl.pathname = "/login";
-        //   return NextResponse.redirect(req.nextUrl);
-        // }
     }
 
     return NextResponse.next();
