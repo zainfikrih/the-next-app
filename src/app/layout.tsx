@@ -66,7 +66,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <ColorSchemeScript />
+        <ColorSchemeScript defaultColorScheme="dark" />
         <ThemeProvider />
       </head>
       <body className={inter.className}>
