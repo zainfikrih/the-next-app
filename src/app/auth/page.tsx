@@ -16,7 +16,7 @@ export default async function Auth() {
           </Text>
         </Center>
         <Center>
-          <Code fz={"14"}>Next.js 14 App Router | Mantine UI</Code>
+          <Code fz={"14"}>Next.js 14</Code>
         </Center>
         <Center mt={32}>
           <LoginForm />
