@@ -1,25 +1,34 @@
-import '@mantine/core/styles.css'
+import "@mantine/core/styles.css";
 
-import { MantineProvider, ColorSchemeScript } from '@mantine/core'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import { Hydrated } from '../lib/hydrateProvider'
-import ThemeProvider from '@/lib/themeProvider'
+import { MantineProvider, ColorSchemeScript } from "@mantine/core";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { Hydrated } from "../lib/hydrateProvider";
+import ThemeProvider from "@/lib/themeProvider";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 // export const dynamic = 'force-static' // temp solution
 
-const name = "The Next App"
-const desc = "NextJS 13, Mantine UI, Zustand, NextAuth"
+const name = "The Next App";
+const desc = "NextJS 13, Mantine UI, Zustand, NextAuth";
+
+export const viewport = {
+  colorScheme: "dark",
+  themeColor: "dark",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  minimumScale: 1,
+  userScalable: "no",
+};
 
 export const metadata: Metadata = {
   title: name,
   description: desc,
   icons: {
-    icon: '/icon/icon-192.png'
+    icon: "/icon/icon-192.png",
   },
-  manifest: '/manifest.webmanifest.json',
-  viewport: "minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no, maximum-scale=1",
+  manifest: "/manifest.webmanifest.json",
   authors: [{ name: "Affogato", url: "https://github.com/zainfikrih/" }],
   keywords:
     "react, pwa, progressive-web-app, nextjs, next.js, app-router, server-side-rendering",
@@ -46,13 +55,13 @@ export const metadata: Metadata = {
     },
     description: desc,
   },
-}
+};
 
 export default function RootLayout({
-  children
+  children,
 }: {
-  children: React.ReactNode,
-  auth: React.ReactNode
+  children: React.ReactNode;
+  auth: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -62,11 +71,9 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <MantineProvider defaultColorScheme="dark">
-          <Hydrated>
-            {children}
-          </Hydrated>
+          <Hydrated>{children}</Hydrated>
         </MantineProvider>
       </body>
     </html>
-  )
+  );
 }
